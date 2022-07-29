@@ -2,22 +2,22 @@ const left = document.querySelector(".left")
 const right = document.querySelector(".right")
 const container = document.querySelector(".container")
 
-Element.prototype.addClass = function (className) {
-  this.classList.add(className)
+function addClass(el, className) {
+  el.classList.add(className)
 }
 
-Element.prototype.removeClass = function (className) {
-  this.classList.remove(className)
+function removeClass(el, className) {
+  el.classList.remove(className)
 }
 
 function main() {
   left.addEventListener("pointerover", () => {
-    container.addClass("hover-left")
-    container.removeClass("hover-right")
+    addClass(container, "hover-left")
+    removeClass(container, "hover-right")
   })
   right.addEventListener("pointerover", () => {
-    container.addClass("hover-right")
-    container.removeClass("hover-left")
+    addClass(container, "hover-right")
+    removeClass(container, "hover-left")
   })
 }
 
